@@ -35,3 +35,37 @@ systemctl start httpd
 systemctl enable httpd
 # Create custom landing page
 echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+
+# AWS EC2 Automated Deployment
+
+---
+
+## 📌 Architecture & Verification
+
+### 1. EC2 Instance Provisioning
+The instance was launched using Amazon Linux 2023 with appropriate tags and instance types.
+
+EC2 Instance Running Console
+*Figure 1: AWS Management Console showing the EC2 instance in a healthy Running state.*
+
+<img width="512" height="73" alt="EC2 Instance - Running State" src="https://github.com/user-attachments/assets/be5abf84-c8f8-4ae4-a0fc-2df819cb55c6" />
+
+---
+
+### 2. Security Group Configuration
+Inbound rules were configured to allow HTTP traffic on port 80 for web access and SSH traffic on port 22 for administration.
+
+Security Group Inbound Rules
+*Figure 2: Security Group inbound rules allowing restricted SSH and HTTP access.*
+
+<img width="512" height="104" alt="Security - Inbound Rules" src="https://github.com/user-attachments/assets/1d3db8ca-3b4f-4ce9-8207-91df3398f10d" />
+
+---
+
+### 3. Web Server Verification
+An Apache (`httpd`) web server was automatically configured at launch via User Data. 
+
+Live Web Page Output
+*Figure 3: Browser accessing the public IP address displaying the live "Hello World" webpage.*
+
+<img width="512" height="265" alt="Web Server - Linux 2" src="https://github.com/user-attachments/assets/dec04ba1-6828-4c92-9338-d124e17fe7a3" />
