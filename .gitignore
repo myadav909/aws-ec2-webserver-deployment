@@ -42,3 +42,17 @@ terraform.rc
 # Optional: ignore plan files saved before destroying Terraform configuration
 # Uncomment the line below if you want to ignore planout files.
 # planout
+
+# Ignore private key files
+*.pem
+*.id_rsa
+
+# Ignore Terraform state files (sensitive infrastructure data)
+*.tfstate
+*.tfstate.backup
+.terraform/
+terraform.tfvars
+
+# Ignore local notes or scratchpad files
+notes.txt
+*.log
